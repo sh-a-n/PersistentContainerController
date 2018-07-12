@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'PersistentContainerController_Example' do
+  pod 'PersistentContainerController', :path => '../'
+
+  target 'PersistentContainerController_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
