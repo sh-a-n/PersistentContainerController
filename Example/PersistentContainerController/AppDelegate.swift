@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PersistentContainerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    lazy var persitentContainerController = PersistentContainerController(name: "PersistentContainerControllerExample") { [weak self] (container, persistentStoreDescription, error) in
+        guard let _ = error else { return print("Store added successfully") }
+        
+        do {
+            try container.destroyPersistentStore(with: persistentStoreDescription)
+            container.addPersistentStore(with: persistentStoreDescription, completionHandler: { _, error in
+                guard let error = error else { return }
+                
+                fatalError((error as NSError).localizedDescription)
+            })
+        }
+        catch {
+            assertionFailure((error as NSError).localizedDescription)
+        }
+    }
 }
 

@@ -1,0 +1,6 @@
+framework module PersistentContainerController {
+  umbrella header "PersistentContainerController-umbrella.h"
+
+  export *
+  module * { export * }
+}
