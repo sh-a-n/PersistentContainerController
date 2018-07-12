@@ -1,6 +1,0 @@
-framework module Pods_PersistentContainerController_Example {
-  umbrella header "Pods-PersistentContainerController_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}
