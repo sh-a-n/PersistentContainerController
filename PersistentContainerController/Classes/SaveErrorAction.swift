@@ -3,6 +3,7 @@
 //  PersistentContainerController
 //
 //  Created by Aleksey Shabrov on 12.07.2018.
+//  Copyright © 2018 High Technologies Center. All rights reserved.
 //
 
 import Foundation
